@@ -21,10 +21,10 @@ let getCrypto = async function (req, res) {
   const saveData = await CryptoModel.insertMany(sortVal)
   console.log(saveData);
 
-    res.status(200).send({ msg:sortVal, status: true });
+     return res.status(200).send({ msg:sortVal, status: true });
   } 
   catch (err) {
-    res.status(500).send({ msg: err.message });
+   return  res.status(500).send({ msg: err.message });
   }
 };
 module.exports.getCrypto = getCrypto
